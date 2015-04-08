@@ -17,6 +17,7 @@ class CSClassList
 		static const int AR_SIZE = 10;
 		int currIndex;
 		string nameAr[AR_SIZE];
+		int size;
 
 };
 

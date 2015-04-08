@@ -1,11 +1,33 @@
 #include "CSClassList.h"
 
+CSClassList::CSClassList()
+{
+	currIndex = 0;
+	isFull = false;
+	for(int i = 0; i < AR_SIZE; i++)
+	{
+		nameAr[i].clear();
+	}
+}
+
+CSClassList::~CSClassList()
+{
+	currIndex = 0;
+	isFull = false;
+	for(int i = 0; i < AR_SIZE; i++)
+	{
+		nameAr[i].clear();
+	}
+}
+
 CSClassList::AddClass(const string N_STRING)
 {
 	if(!isFull)
 	{
 		nameAr[index] = N_STRING;
+		size++;
 	}
+
 }
 
 CSClassList::IsFull() const
@@ -22,4 +44,29 @@ CSClassList::IsFull() const
 	return isFull;
 }
 
-	
+CSClassList::GetLongestName() const
+{
+	string longestName;
+
+	longestName.clear();
+
+	for(int i = 0; i < AR_SIZE; i++)
+	{
+		if(nameAr[i] > longestName)
+		{
+			longestName = nameAr[i];
+		}
+	}
+
+	return longestName;
+}
+
+CSCLassList::DisplayName(int index) const
+{
+	return nameAr[index];
+}
+
+CSCLassList::GetNumClass()
+{
+	return size;
+}

@@ -3,22 +3,10 @@
 CSClassList::CSClassList()
 {
 	currIndex = 0;
-	isFull = false;
-	for(int i = 0; i < AR_SIZE; i++)
-	{
-		nameAr[i].clear();
-	}
+	isFull    = false;
 }
 
-CSClassList::~CSClassList()
-{
-	currIndex = 0;
-	isFull = false;
-	for(int i = 0; i < AR_SIZE; i++)
-	{
-		nameAr[i].clear();
-	}
-}
+CSClassList::~CSClassList() { }
 
 CSClassList::AddClass(const string N_STRING)
 {
@@ -27,19 +15,14 @@ CSClassList::AddClass(const string N_STRING)
 		nameAr[index] = N_STRING;
 		size++;
 	}
-
 }
 
 CSClassList::IsFull() const
 {
 	if(index == AR_SIZE)
-	{
 		isFull = true;
-	}
 	else
-	{
 		isFull = false;
-	}
 
 	return isFull;
 }
@@ -51,12 +34,8 @@ CSClassList::GetLongestName() const
 	longestName.clear();
 
 	for(int i = 0; i < AR_SIZE; i++)
-	{
 		if(nameAr[i] > longestName)
-		{
 			longestName = nameAr[i];
-		}
-	}
 
 	return longestName;
 }
